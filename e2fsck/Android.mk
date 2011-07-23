@@ -10,9 +10,9 @@ LOCAL_SRC_FILES :=  \
 
 LOCAL_MODULE := libext2_profile
 LOCAL_MODULE_TAGS := eng
-LOCAL_SYSTEM_SHARED_LIBRARIES := \
-	libext2_com_err \
-	libc
+#LOCAL_SYSTEM_SHARED_LIBRARIES := \
+#	libext2_com_err \
+#	libc
 
 LOCAL_C_INCLUDES := external/e2fsprogs/lib
 
@@ -41,7 +41,7 @@ LOCAL_CFLAGS := -Os -g -W -Wall \
 
 LOCAL_PRELINK_MODULE := false
 
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
 
 
 #########################
@@ -77,14 +77,24 @@ LOCAL_SRC_FILES :=  \
 LOCAL_MODULE := e2fsck
 LOCAL_MODULE_TAGS := eng
 
-LOCAL_SYSTEM_SHARED_LIBRARIES := \
-	libext2fs \
-	libext2_blkid \
-	libext2_uuid \
-	libext2_profile \
-	libext2_com_err \
-	libext2_e2p \
-	libc
+#LOCAL_SYSTEM_SHARED_LIBRARIES := \
+#	libext2fs \
+#	libext2_blkid \
+#	libext2_uuid \
+#	libext2_profile \
+#	libext2_com_err \
+#	libext2_e2p \
+#	libc
+
+LOCAL_FORCE_STATIC_EXECUTABLE := true
+LOCAL_STATIC_LIBRARIES += \
+        libext2fs \
+        libext2_blkid \
+        libext2_uuid \
+        libext2_profile \
+        libext2_com_err \
+        libext2_e2p \
+        libc
 
 LOCAL_C_INCLUDES := external/e2fsprogs/lib
 

@@ -36,7 +36,8 @@ LOCAL_CFLAGS := -Os -g -W -Wall \
 
 LOCAL_MODULE := resize2fs
 LOCAL_MODULE_TAGS := eng
-LOCAL_SYSTEM_SHARED_LIBRARIES := libext2fs libext2_com_err libext2_e2p libc
+LOCAL_STATIC_LIBRARIES := libext2fs libext2_com_err libext2_e2p libc
+LOCAL_FORCE_STATIC_EXECUTABLE := true
 
 
 include $(BUILD_EXECUTABLE)

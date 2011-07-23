@@ -43,7 +43,7 @@ LOCAL_CFLAGS += -DNO_CHECK_BB
 LOCAL_MODULE := mke2fs
 LOCAL_MODULE_TAGS := eng
 
-LOCAL_SYSTEM_SHARED_LIBRARIES := \
+LOCAL_STATIC_LIBRARIES := \
 	libext2fs \
 	libext2_blkid \
 	libext2_uuid \
@@ -51,6 +51,7 @@ LOCAL_SYSTEM_SHARED_LIBRARIES := \
 	libext2_com_err \
 	libext2_e2p \
 	libc
+LOCAL_FORCE_STATIC_EXECUTABLE := true
 
 include $(BUILD_EXECUTABLE)
 
@@ -103,13 +104,14 @@ LOCAL_CFLAGS += -DNO_CHECK_BB
 
 LOCAL_MODULE := tune2fs
 LOCAL_MODULE_TAGS := eng
-LOCAL_SYSTEM_SHARED_LIBRARIES := \
+LOCAL_STATIC_LIBRARIES := \
 	libext2fs \
 	libext2_com_err \
 	libext2_blkid \
 	libext2_e2p \
 	libext2_uuid \
 	libc
+LOCAL_FORCE_STATIC_EXECUTABLE := true
 
 include $(BUILD_EXECUTABLE)
 
@@ -152,10 +154,11 @@ LOCAL_CFLAGS := -Os -g -W -Wall \
 LOCAL_MODULE := badblocks
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_SYSTEM_SHARED_LIBRARIES := \
+LOCAL_STATIC_LIBRARIES := \
 	libext2fs \
 	libext2_com_err \
 	libc
+LOCAL_FORCE_STATIC_EXECUTABLE := true
 
 include $(BUILD_EXECUTABLE)
 
@@ -198,9 +201,10 @@ LOCAL_CFLAGS := -Os -g -W -Wall \
 LOCAL_MODULE := e2label
 LOCAL_MODULE_TAGS := eng
 
-LOCAL_SYSTEM_SHARED_LIBRARIES := \
+LOCAL_STATIC_LIBRARIES := \
 	libext2fs \
 	libext2_com_err \
 	libc
+LOCAL_FORCE_STATIC_EXECUTABLE := true
 
 include $(BUILD_EXECUTABLE)

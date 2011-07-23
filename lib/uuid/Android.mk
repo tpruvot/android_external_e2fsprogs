@@ -45,4 +45,4 @@ LOCAL_CFLAGS := -Os -g -W -Wall \
 
 LOCAL_PRELINK_MODULE := false
 
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)

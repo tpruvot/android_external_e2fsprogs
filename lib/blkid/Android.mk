@@ -17,7 +17,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE := libext2_blkid
 LOCAL_MODULE_TAGS := eng
-LOCAL_SYSTEM_SHARED_LIBRARIES := libext2_uuid libc
+#LOCAL_SYSTEM_SHARED_LIBRARIES := libext2_uuid libc
 
 LOCAL_C_INCLUDES := external/e2fsprogs/lib
 
@@ -46,4 +46,4 @@ LOCAL_CFLAGS := -Os -g -W -Wall \
 
 LOCAL_PRELINK_MODULE := false
 
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
